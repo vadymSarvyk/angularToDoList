@@ -1,0 +1,29 @@
+ <div *ngIf="selectedItem"> 
+<h2>{{selectedItem.name}} details</h2>
+<div><span>id: </span>{{selectedItem.id}}</div>
+<div><label>name: <input [attr.value]="selectedItem.name" placeholder="name" /></label></div>
+<div>
+<label>is complete:<input [value]="selectedItem.isComplete" type="checkbox"/> </label>
+</div>
+ </div> 
+<h2>My List</h2>
+<ul class="items" style="color: red; font-size: 11px;">
+<li *ngFor="let item of items" (click)="onSelect(item)" [class.selected]="item === selectedItem">
+{{item.id}}: {{item.name}}
+</li>
+</ul>
+<div *ngIf="items.length > 0">
+{{items.length}} {{items.length == 1 ? 'item' :'items'}}
+</div> 
+
+<!-- <div [ngSwitch]="car">
+<p *ngSwitchCase="'Audi'">This is Audi</p>
+<p *ngSwitchCase="'BMW'">This is BMW</p>
+<p *ngSwitchCase="'Mercedes'">This is Mercedes</p>
+<p *ngSwitchDefault>Car is undefined</p>
+</div> -->
+<input type="text" [(ngModel)]="nameq" /> <br><br>
+               <input type="text" [(ngModel)]="nameq" />
+               <button (click)="select1()">Push me</button>
+               <p>{{biggest}}</p> 
+              <!--  <a [href]="path" target=_blank></a> -->
